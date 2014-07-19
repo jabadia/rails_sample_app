@@ -23,17 +23,20 @@ describe "StaticPages" do
   end
 
   describe "Page Titles" do
+
+  	let(:base_title) { "Ruby On Rails Tutorial App" }
+
   	it "Home should have the right title" do
   		visit '/static_pages/home'
-  		page.should have_selector('title', :text => 'Ruby On Rails Tutorial App | Home')
+  		page.should have_selector('title', :text => "#{base_title} | Home")
   	end
   	it "Help should have the right title" do
   		visit '/static_pages/help'
-  		page.should have_selector('title', :text => 'Ruby On Rails Tutorial App | Help')
+  		page.should have_selector('title', :text => "#{base_title} | Help")
   	end
   	it "About should have the right title" do
   		visit '/static_pages/about'
-  		page.should have_selector('title', :text => 'Ruby On Rails Tutorial App | About')
+  		page.should have_selector('title', :text => "#{base_title} | About")
   	end
   end
 
